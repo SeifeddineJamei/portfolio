@@ -27,9 +27,13 @@ const Portfolio: React.FC = () => {
           <img src="/Seif.png" alt="Seifeddine Jamei" className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white transition-transform duration-500 hover:scale-110 hover:rotate-3" />
           <h1 className="text-6xl font-black uppercase tracking-widest mb-4 font-mono transition-all duration-500 hover:text-[#00BFFF]">SEIFEDDINE JAMEI</h1>
           <p className="text-2xl mb-6 font-light transition-all duration-300 hover:text-gray-200">PRODUCT ENGINEER</p>
-          <p className="text-lg max-w-2xl mx-auto font-light transition-all duration-300 hover:text-gray-200">
-            BRIDGING ROBUST CODE & EXCEPTIONAL USER EXPERIENCES
+          <p className="text-lg max-w-2xl mx-auto font-light transition-all duration-300 hover:text-gray-200 mb-8">
+            Specialized in high-tolerance medical devices and consumer electronics, focusing on reducing assembly complexity through DFM.
           </p>
+          <div className="flex justify-center space-x-6">
+            <a href="/resume.pdf" className="bg-[#00BFFF] text-white px-6 py-3 rounded hover:bg-[#0099CC] transition">DOWNLOAD CV</a>
+            <a href="https://linkedin.com/in/seifeddine-jamei" target="_blank" rel="noopener noreferrer" className="border-2 border-white px-6 py-3 rounded hover:bg-white hover:text-[#2C3E50] transition">LINKEDIN</a>
+          </div>
         </div>
       </section>
 
@@ -72,43 +76,53 @@ const Portfolio: React.FC = () => {
       {/* Projects Section */}
       <section className="py-16 bg-[#F4F7F6]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold uppercase tracking-wider text-center mb-12 border-b-2 border-[#2C3E50] pb-4">PROJECT PORTFOLIO</h2>
+          <h2 className="text-3xl font-bold uppercase tracking-wider text-center mb-12 border-b-2 border-[#2C3E50] pb-4">CASE STUDIES</h2>
           <div className="space-y-16">
             {[
               {
-                title: 'E-COMMERCE PLATFORM',
-                problem: 'Legacy system causing 30% cart abandonment',
-                solution: 'Built scalable React/Node.js platform with 99.9% uptime',
-                gallery: ['CAD Analysis', 'Prototype', 'Final Assembly']
+                title: 'MEDICAL DEVICE HOUSING',
+                constraint: 'Must be waterproof (IP67) but cost under $5 per unit',
+                pivot: 'Switched from multi-part assembly to single-shot injection molding after first prototype leaked',
+                stack: 'Simulated in ANSYS, modeled in SolidWorks, prototyped with SLA printing',
+                outcome: 'Reduced part count by 15%, passed IP67 certification on first try, achieved target cost',
+                gallery: ['Exploded View', 'FEA Analysis', 'Final Prototype']
               },
               {
-                title: 'DESIGN SYSTEM',
-                problem: 'Inconsistent UI across 5+ products',
-                solution: 'Created reusable component library used in 10+ projects',
-                gallery: ['Wireframes', 'Component Library', 'Implementation']
+                title: 'CONSUMER ELECTRONICS ENCLOSURE',
+                constraint: 'High-tolerance fit for internal components with thermal management requirements',
+                pivot: 'Added internal heat sinks and snap-fits after thermal testing revealed hotspots',
+                stack: 'Designed in SolidWorks, validated with thermal simulation, manufactured via CNC machining',
+                outcome: 'Improved thermal performance by 25%, reduced assembly time by 40%, zero tolerance issues',
+                gallery: ['CAD Model', 'Thermal Map', 'Assembly View']
               },
               {
-                title: 'MOBILE APP',
-                problem: 'Native apps limiting cross-platform reach',
-                solution: 'Developed React Native app with 4.8-star rating',
-                gallery: ['User Research', 'Design Iterations', 'Launch Metrics']
+                title: 'WEARABLE DEVICE CASE',
+                constraint: 'Ergonomic design for 24/7 wear with battery access and sensor integration',
+                pivot: 'Iterated on draft angles and wall thickness after injection molding trials showed warping',
+                stack: 'Prototyped with FDM printing, finalized in injection molding, tested for durability',
+                outcome: 'Achieved 4.8-star user rating, 99% retention rate, patented snap-fit mechanism',
+                gallery: ['User Research', 'Design Iterations', 'Final Product']
               },
             ].map((project, index) => (
-              <div key={index} className="bg-white p-8 shadow-lg">
+              <div key={index} className="bg-white p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <h3 className="text-2xl font-bold uppercase tracking-wider mb-8 border-l-4 border-[#00BFFF] pl-4">{project.title}</h3>
                 <div className="grid md:grid-cols-2 gap-8 mb-8">
                   <div>
-                    <h4 className="text-lg font-semibold uppercase mb-4">The Problem</h4>
-                    <p className="text-gray-700">{project.problem}</p>
+                    <h4 className="text-lg font-semibold uppercase mb-4 text-[#00BFFF]">The Constraint</h4>
+                    <p className="text-gray-700 mb-4">{project.constraint}</p>
+                    <h4 className="text-lg font-semibold uppercase mb-4 text-[#00BFFF]">Engineering Pivot</h4>
+                    <p className="text-gray-700">{project.pivot}</p>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold uppercase mb-4">Engineering Solution</h4>
-                    <p className="text-gray-700">{project.solution}</p>
+                    <h4 className="text-lg font-semibold uppercase mb-4 text-[#00BFFF]">Software Stack</h4>
+                    <p className="text-gray-700 mb-4 font-mono text-sm">{project.stack}</p>
+                    <h4 className="text-lg font-semibold uppercase mb-4 text-[#00BFFF]">Outcome</h4>
+                    <p className="text-gray-700 font-semibold">{project.outcome}</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-3 gap-4">
                   {project.gallery.map((item, i) => (
-                    <div key={i} className="bg-gray-200 h-32 flex items-center justify-center text-center font-mono text-sm">
+                    <div key={i} className="bg-gray-200 h-32 flex items-center justify-center text-center font-mono text-sm hover:bg-gray-300 transition-colors duration-300">
                       {item}
                     </div>
                   ))}
