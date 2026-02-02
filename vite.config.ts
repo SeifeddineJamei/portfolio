@@ -9,4 +9,7 @@ export default defineConfig({
     reactRouter(),
     tsconfigPaths(),
   ],
+  build: {
+    outDir: 'dist',
+  },
 })
