@@ -7,7 +7,8 @@ A modern, production-ready template for building full-stack React applications u
 ## Features
 
 - 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
+- ⚡️ Hot Module Replacement <img width="1600" height="900" alt="ScreenShot_02_02_2026_11_57_51" src="https://github.com/user-attachments/assets/a5b209a9-a638-431a-b185-5ed28d61746a" />
+
 - 📦 Asset bundling and optimization
 - 🔄 Data loading and mutations
 - 🔒 TypeScript by default
