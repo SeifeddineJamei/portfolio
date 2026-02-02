@@ -1,10 +1,10 @@
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/index";
 import Portfolio from "../portfolio/portfolio";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "John Doe - Product Engineer" },
-    { name: "description", content: "Portfolio of John Doe, Product Engineer specializing in bridging code and user experiences." },
+    { title: "Seifeddine Jamei - Product Engineer" },
+    { name: "description", content: "Portfolio of Seifeddine Jamei, Product Engineer specializing in high-tolerance medical devices and consumer electronics." },
   ];
 }
 
